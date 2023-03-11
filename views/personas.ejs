@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ruta: Personas</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='../assets/style.css'>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </tr>
+            <% data.forEach((key) => { %>
+                <tr>
+                    <td>
+                        <%= key.id %>
+                    </td>
+                    <td>
+                        <%= key.nombre %>
+                    </td>
+                    <td>
+                        <%= key.apellido %>
+                    </td>
+                    <td>
+                        <%= key.edad %>
+                    </td>
+                </tr>
+            <% }); %>
+    </table>
+</body>
+
+</html>

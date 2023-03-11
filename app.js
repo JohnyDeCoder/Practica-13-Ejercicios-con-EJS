@@ -5,7 +5,7 @@ var port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 
-// app.use('/assets', express.static(__dirname + '/public'));
+app.use('/assets', express.static(__dirname + '/public'));
 
 app.use('/', function (req, res, next) {
     console.log('Request Url:' + req.url);
@@ -16,8 +16,18 @@ app.use('/', function (req, res, next) {
 //     res.render('index')
 // });
 
+let data = [
+    { id: 1, nombre: "Hugo", apellido: "Estreda Ramirez", edad: 19 },
+    { id: 2, nombre: "Estela", apellido: "Perez Suarez", edad: 18 },
+    { id: 3, nombre: "Sabrina", apellido: "Contreras Morales", edad: 17 },
+];
+
 app.get('/person/:id', function (req, res) {
     res.render('person', { ID: req.params.id })
+});
+
+app.get('/personas/', function (req, res) {
+    res.render('personas', { data })
 });
 
 app.listen(port);
