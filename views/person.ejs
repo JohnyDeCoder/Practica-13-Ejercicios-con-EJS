@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ruta: Person</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' href='assets/style.css'> -->
+</head>
+
+<body>
+    <p>
+        ¡Hola desde el EJS!
+    </p>
+
+    <% if (ID % 2 == 0) { %>
+        <h1>
+            El número <%= ID %> es PAR
+        </h1>
+    <% } else { %>
+        <h1>
+            El número <%= ID %> es IMPAR
+        </h1>
+
+        <ul>
+    <% } for (let i = 1; i <= ID; i++) { %>
+        <li>
+            <%= i %>
+        </li>
+    <% } %>
+    </ul>
+
+</body>
+
+</html>
